@@ -1,5 +1,5 @@
 const breakpoints = {xxlarge:1600,xlarge:1280,large:980,medium:768,small:640};
-$(window).resize(function() {
+function insertNewBackground() {
     let winSize = ($(window).width());
     $.each(breakpoints, function(index, obj) {
         if(obj >= winSize && winSize <= 768) {
@@ -17,4 +17,10 @@ $(window).resize(function() {
             });
         }
     });
+}
+
+insertNewBackground();
+$(window).resize(function() {
+    insertNewBackground();
 });
+
